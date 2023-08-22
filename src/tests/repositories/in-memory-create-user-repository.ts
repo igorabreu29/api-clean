@@ -1,7 +1,7 @@
 import { User } from "../../entities/User";
-import { ICreateUserRepository } from "../../repositories/ICreateUserRepository";
+import { CreateUserRepository } from "../../repositories/CreateUserRepository";
 
-export class InMemoryCreateUserRepository implements ICreateUserRepository {
+export class InMemoryCreateUserRepository implements CreateUserRepository {
     private users: User[] = [
         {
             id: '30303030',

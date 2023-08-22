@@ -1,5 +1,5 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import { CreateUserUseCase } from "./create-user-use-case";
+import { CreateUserUseCase } from "./create-user";
 import { z } from "zod";
 import { User } from "../../entities/User";
 

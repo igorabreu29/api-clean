@@ -1,8 +1,8 @@
 import { prisma } from "../../database/prisma";
 import { User } from "../../entities/User";
-import { ICreateUserRepository } from "../ICreateUserRepository";
+import { CreateUserRepository } from "../CreateUserRepository";
 
-export class CreateUserRepository implements ICreateUserRepository {
+export class PrismaCreateUserRepository implements CreateUserRepository {
     async findByEmail(email: string): Promise<User> {
         const findUserByEmail = await prisma.user.findFirst({
             where: {

@@ -1,8 +1,8 @@
-import { CreateUserRepository } from "../../repositories/implementations/create-user-repository";
+import { PrismaCreateUserRepository } from "../../repositories/implementations/prisma-create-user-repository";
 import { CreateUserController } from "./create-user-controller";
-import { CreateUserUseCase } from "./create-user-use-case";
+import { CreateUserUseCase } from "./create-user";
 
-const createUserRepository = new CreateUserRepository()
-const createUserUseCase = new CreateUserUseCase(createUserRepository)
+const prismaCreateUserRepository = new PrismaCreateUserRepository()
+const createUserUseCase = new CreateUserUseCase(prismaCreateUserRepository)
 
 export const createUserController = new CreateUserController(createUserUseCase)

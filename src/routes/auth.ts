@@ -2,12 +2,11 @@ import { FastifyInstance } from "fastify";
 import { z } from 'zod'
 import { prisma } from '../database/prisma'
 import { createUserController } from "../use-case/create-user";
+import { listUsersController } from "../use-case/list-user";
 
 export async function userAuth(app: FastifyInstance) {
     app.get('/auth', async (req, res) => {
-        const users = await prisma.user.findMany()
-
-        return users
+        return await listUsersController.handler(req, res)
     })
 
     app.get('/auth/:id', async (req, res) => {

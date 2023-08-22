@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CreateUserUseCase } from "./create-user-use-case";
+import { CreateUserUseCase } from "./create-user";
 import { InMemoryCreateUserRepository } from "../../tests/repositories/in-memory-create-user-repository";
 import { User } from "../../entities/User";
 
